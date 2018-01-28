@@ -1,0 +1,57 @@
+{
+    "manifest-version": 1,
+    "name": "yousefamar-",
+    "version": "0.1.0",
+    "description": "",
+    "author": "yousefamar",
+    "licence": "MIT",
+    "databox-type": "app",
+    "tags": "",
+    "homepage": "https://github.com/yousefamar/yousefamar-",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yousefamar/yousefamar-.git"
+    },
+    "packages": [
+        {
+            "id": "4faf076e.f0c738",
+            "name": "new package",
+            "purpose": "",
+            "required": false,
+            "datastores": [
+                "4da0f19.604901",
+                "777ded3e.28c854",
+                "6fd885f7.e3553c"
+            ],
+            "benefits": ""
+        }
+    ],
+    "allowed-combinations": [],
+    "datasources": [
+        {
+            "type": "loadavg1",
+            "required": true,
+            "name": "osmonitor",
+            "clientid": "4da0f19.604901",
+            "granularities": []
+        },
+        {
+            "type": "loadavg5",
+            "required": true,
+            "name": "osmonitor",
+            "clientid": "777ded3e.28c854",
+            "granularities": []
+        },
+        {
+            "type": "loadavg15",
+            "required": true,
+            "name": "osmonitor",
+            "clientid": "6fd885f7.e3553c",
+            "granularities": []
+        }
+    ],
+    "network-permissions": [],
+    "resource-requirements": {},
+    "volumes": [],
+    "export-whitelist": []
+}
