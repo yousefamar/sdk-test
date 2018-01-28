@@ -1,0 +1,79 @@
+[
+    {
+        "id": "4faf076e.f0c738",
+        "label": "new package",
+        "type": "tab"
+    },
+    {
+        "id": "4da0f19.604901",
+        "type": "osmonitor",
+        "z": "4faf076e.f0c738",
+        "name": "",
+        "subtype": "loadavg1",
+        "x": 221.5,
+        "y": 180,
+        "wires": [
+            [
+                "c59feb93.706ca8"
+            ]
+        ]
+    },
+    {
+        "id": "777ded3e.28c854",
+        "type": "osmonitor",
+        "z": "4faf076e.f0c738",
+        "name": "",
+        "subtype": "loadavg5",
+        "x": 247.5,
+        "y": 265,
+        "wires": [
+            [
+                "c59feb93.706ca8"
+            ]
+        ]
+    },
+    {
+        "id": "6fd885f7.e3553c",
+        "type": "osmonitor",
+        "z": "4faf076e.f0c738",
+        "name": "",
+        "subtype": "loadavg15",
+        "x": 263.5,
+        "y": 372,
+        "wires": [
+            [
+                "c59feb93.706ca8"
+            ]
+        ]
+    },
+    {
+        "id": "c59feb93.706ca8",
+        "type": "dbfunction",
+        "z": "4faf076e.f0c738",
+        "name": "",
+        "func": "//the container object\n const {name:msg_name,id:msg_id,type:msg_type,subtype:msg_subtype,payload:msg_payload} = msg;\n //the payload object\nconst {ts:msg_payload_ts,value:msg_payload_value} = msg_payload;\n\nconsole.log(ts + ' ' + value);\n\nreturn msg;",
+        "outputs": 1,
+        "inputtypedef": "",
+        "outputtypedef": "{}",
+        "noerr": 0,
+        "x": 447.5,
+        "y": 248,
+        "wires": [
+            [
+                "e43d5704.0eb488"
+            ]
+        ]
+    },
+    {
+        "id": "e43d5704.0eb488",
+        "type": "debugger",
+        "z": "4faf076e.f0c738",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 583.5,
+        "y": 231,
+        "wires": []
+    }
+]
