@@ -7,10 +7,10 @@
     "licence": "MIT",
     "databox-type": "app",
     "tags": "",
-    "homepage": "https://github.com/yousefamar/yousefamar-",
+    "homepage": "https://github.com/yousefamar/sdk-test",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/yousefamar/yousefamar-.git"
+        "url": "git+https://github.com/yousefamar/sdk-test.git"
     },
     "packages": [
         {
@@ -53,5 +53,10 @@
     "network-permissions": [],
     "resource-requirements": {},
     "volumes": [],
-    "export-whitelist": []
+    "export-whitelist": [
+        {
+            "url": "https://export.amar.io",
+            "description": "exports data to https://export.amar.io"
+        }
+    ]
 }
