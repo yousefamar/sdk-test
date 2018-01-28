@@ -51,16 +51,17 @@
         "type": "dbfunction",
         "z": "4faf076e.f0c738",
         "name": "",
-        "func": "//the container object\n const {name:msg_name,id:msg_id,type:msg_type,subtype:msg_subtype,payload:msg_payload} = msg;\n //the payload object\nconst {ts:msg_payload_ts,value:msg_payload_value} = msg_payload;\n\nconsole.log(ts + ' ' + value);\n\nreturn msg;",
+        "func": "let arrival = Date.now();\n\nconsole.log(msg.subtype + ', ' + arrival + ', ' + msg.payload.ts + ', ' + msg.payload.value);\n\nreturn {\n    name: 'export',\n    urls: 'https://export.amar.io',\n    payload: {\n        url: 'https://export.amar.io',\n        data: msg.subtype + ', ' + arrival + ', ' + msg.payload.ts + ', ' + msg.payload.value\n    }\n};",
         "outputs": 1,
         "inputtypedef": "",
-        "outputtypedef": "{}",
+        "outputtypedef": "{\n    \"type\": \"object\",\n    \"properties\": {\n        \"name\": {\n            \"type\": \"literal\"\n        },\n        \"urls\": {\n            \"type\": \"literal\"\n        },\n        \"payload\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"url\": {\n                    \"type\": \"literal\"\n                },\n                \"data\": {\n                    \"type\": \"literal\"\n                }\n            }\n        }\n    }\n}",
         "noerr": 0,
-        "x": 447.5,
-        "y": 248,
+        "x": 449,
+        "y": 266,
         "wires": [
             [
-                "e43d5704.0eb488"
+                "e43d5704.0eb488",
+                "1605283a.e36bc8"
             ]
         ]
     },
@@ -74,6 +75,17 @@
         "complete": "false",
         "x": 583.5,
         "y": 231,
+        "wires": []
+    },
+    {
+        "id": "1605283a.e36bc8",
+        "type": "export",
+        "z": "4faf076e.f0c738",
+        "name": "localhost",
+        "urls": "https://export.amar.io",
+        "payload": {},
+        "x": 579,
+        "y": 320,
         "wires": []
     }
 ]
